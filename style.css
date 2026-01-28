@@ -1,13 +1,17 @@
 /*
-  Il foglio di stile utilizza un layout fluido e unità di misura relative per garantire una corretta visualizzazione su
-  dispositivi desktop e mobile.
-  L’assenza di framework esterni consente una maggiore leggerezza e tempi di caricamento ridotti, coerenti con
-  i principi di sostenibilità digitale.
+  Il foglio di stile è stato progettato secondo un approccio mobile-friendly e progressivo.
+
+  L’uso di unità relative, layout fluidi e media query consente di garantire una resa coerente su desktop,
+  tablet e smartphone, senza ricorrere a framework esterni.
+
+  Questa scelta riduce la complessità del progetto, migliora le prestazioni e favorisce la sostenibilità digitale.
 */
 
 /* 
-  Variabili CSS: centralizzano colori e facilitano manutenzione.
-  Cambiando un valore qui, si aggiorna l'intero tema della pagina.
+  Le variabili CSS consentono di centralizzare le scelte cromatiche e facilitano la manutenzione del progetto.
+
+  Modificando un singolo valore è possibile aggiornare l’intero tema grafico, rendendo il codice più leggibile,
+  scalabile e coerente nel tempo.
 */
 :root{
   --bg:#0f172a;
@@ -22,8 +26,11 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 
-/*  Le dimensioni dei caratteri e le spaziature sono state scelte per garantire una buona leggibilità anche su
-  schermi di piccole dimensioni, evitando la necessità di zoom manuale su dispositivi mobili. */
+/*  Nel Progetto viene utilizzato un font di sistema per migliorare le prestazioni e la leggibilità.
+
+  L’interlinea e le dimensioni dei caratteri sono state calibrate per garantire una lettura confortevole anche su dispositivi mobili,
+  evitando la necessità di zoom manuale..
+*/
 body{
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   line-height:1.6;
@@ -31,7 +38,11 @@ body{
   background:var(--paper);
 }
 
-/* HERO: sfondo a gradiente per comunicare "istituzionalità" senza immagini pesanti */
+/* HERO: sfondo a gradiente per comunicare "istituzionalità" senza immagini pesanti
+
+  La funzione clamp() permette di definire dimensioni fluide che si adattano dinamicamente alla larghezza dello schermo.
+
+  Questa soluzione evita break-point rigidi e migliora la resa grafica su dispositivi di dimensioni differenti.*/
 .hero{
   background: radial-gradient(1200px 600px at 80% -20%, #3b82f6 10%, #1e3a8a 60%, #0f172a 100%), var(--bg);
   color:white;
@@ -114,7 +125,10 @@ body{
 
 .highlights h2, .reports h2{margin-top:0}
 
-/* Card: griglia responsive con auto-fill (si adatta automaticamente allo spazio) */
+/* Il layout delle card utilizza CSS Grid con auto-fill e minmax, consentendo alla griglia di adattarsi automaticamente
+  allo spazio disponibile.
+
+  Questo approccio elimina la necessità di gestire manualmente il numero di colonne per ciascun dispositivo. */
 .cards{
   list-style:none;
   padding:0;
@@ -157,8 +171,10 @@ body{
 }
 .footer a{color:#c7d2fe}
 
-/* Media query per dispositivi con schermo ridotto. Questa regola consente di ottimizzare la disposizione
-  dei contenuti su smartphone, migliorando la fruibilità senza alterare la struttura complessiva della pagina.
+/*  Media query per schermi di dimensioni ridotte.
+
+  Su smartphone la disposizione dei report passa da layout orizzontale a verticale, migliorando la leggibilità, l’interazione touch, l’accessibilità dei pulsanti di azione.
+  La struttura semantica resta invariata, garantendo coerenza tra desktop e mobile.
 */
 @media (max-width: 600px){
   .reports .report{
