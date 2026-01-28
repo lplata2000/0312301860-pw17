@@ -1,0 +1,173 @@
+/*
+  Il foglio di stile utilizza un layout fluido e unità di misura relative per garantire una corretta visualizzazione su
+  dispositivi desktop e mobile.
+  L’assenza di framework esterni consente una maggiore leggerezza e tempi di caricamento ridotti, coerenti con
+  i principi di sostenibilità digitale.
+*/
+
+/* 
+  Variabili CSS: centralizzano colori e facilitano manutenzione.
+  Cambiando un valore qui, si aggiorna l'intero tema della pagina.
+*/
+:root{
+  --bg:#0f172a;
+  --ink:#0b1020;
+  --paper:#ececec;
+  --muted:#64748b;
+  --accent:#1e40af;
+  --accent-ink:#ffffff;
+}
+
+/* Reset minimo + box model coerente */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+/*  Le dimensioni dei caratteri e le spaziature sono state scelte per garantire una buona leggibilità anche su
+  schermi di piccole dimensioni, evitando la necessità di zoom manuale su dispositivi mobili. */
+body{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  line-height:1.6;
+  color:#0f172a;
+  background:var(--paper);
+}
+
+/* HERO: sfondo a gradiente per comunicare "istituzionalità" senza immagini pesanti */
+.hero{
+  background: radial-gradient(1200px 600px at 80% -20%, #3b82f6 10%, #1e3a8a 60%, #0f172a 100%), var(--bg);
+  color:white;
+  padding: 5rem 1rem 4rem;
+}
+.hero__inner{
+  max-width:1000px;
+  margin:0 auto;
+  text-align:center;
+}
+.hero h1{
+  margin:0 0 .5rem 0;
+  /* clamp: dimensione fluida, migliora la resa su mobile e desktop */
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+}
+*/
+.hero__title {
+  margin: 0 0 1.5rem;
+  text-align: center; /* centra il contenuto inline */
+}
+
+/* immagine fluida */
+.hero__title-image {
+  display: block;      /* necessario */
+  margin: 0 auto;      /* centra orizzontalmente */
+  width: clamp(220px, 80vw, 680px);
+  height: auto;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .hero__title-image {
+    max-width: 520px;
+  }
+}
+/* mobile */
+@media (max-width: 768px) {
+  .hero__title-image {
+    max-width: 90vw;  /* si adatta allo schermo */
+  }
+}
+.subtitle{
+  margin:0 auto 1.5rem auto;
+  max-width:60ch;
+  color:#e2e8f0;
+}
+
+/* Pulsanti: classi riutilizzabili per CTA e download */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:var(--accent-ink);
+  padding:.7rem 1rem;
+  border-radius:.6rem;
+  text-decoration:none;
+  font-weight:600;
+  transition: transform .06s ease-in-out, opacity .2s ease;
+}
+.btn:hover{transform: translateY(-1px);opacity:.95}
+
+/* Accessibilità: focus visibile per navigazione da tastiera */
+.btn:focus-visible{
+  outline: 3px solid rgba(255,255,255,.85);
+  outline-offset: 3px;
+}
+
+/* Varianti cromatiche dei pulsanti (evita duplicazione di stile) */
+.btn--secondary{background:#0ea5e9}
+.btn--download{background:#993838}
+
+/* Contenitore: limita la larghezza per migliorare leggibilità (line length) */
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:2rem 1rem;
+}
+
+/* Nota: testo secondario e meno “pesante” visivamente */
+.intro .note{color:var(--muted);font-size:.95rem}
+
+.highlights h2, .reports h2{margin-top:0}
+
+/* Card: griglia responsive con auto-fill (si adatta automaticamente allo spazio) */
+.cards{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:1rem;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+}
+.card{
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:1rem;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
+}
+
+/* Sezione report: layout orizzontale su desktop (meta a sinistra, azioni a destra) */
+.reports .report{
+  display:flex;
+  gap:1rem;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  margin:.8rem 0;
+  box-shadow:0 1px 2px rgba(0,0,0,.03);
+}
+.report__meta h3{margin:.2rem 0}
+.report__meta .desc{margin:.2rem 0;color:var(--muted)}
+
+/* Footer: disclaimer (uso didattico) con contrasto sufficiente */
+.footer{
+  text-align:center;
+  padding:2rem 1rem;
+  color:#94a3b8;
+  background:#0b1220;
+  margin-top:2rem;
+}
+.footer a{color:#c7d2fe}
+
+/* Media query per dispositivi con schermo ridotto. Questa regola consente di ottimizzare la disposizione
+  dei contenuti su smartphone, migliorando la fruibilità senza alterare la struttura complessiva della pagina.
+*/
+@media (max-width: 600px){
+  .reports .report{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .report__actions{width:100%}
+  .report__actions .btn{
+    width:100%;
+    text-align:center;
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<!--
+  La struttura HTML è volutamente semplice e semantica. L’utilizzo di tag come header, main, section e footer consente una corretta interpretazione del contenuto
+  anche su dispositivi mobili, favorendo accessibilità, leggibilità e adattamento automatico a schermi di dimensioni ridotte.
+-->
+
+<head>
+  <!--
+    Meta essenziali:
+    - charset: corretta codifica dei caratteri (accenti, simboli)
+    - viewport: rende la pagina responsive su dispositivi mobili
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Titolo (visualizzato nella scheda del browser) -->
+  <title>Maccarese S.p.A. – Report di Sostenibilità</title>
+
+  <!-- Collegamento al foglio di stile (separazione tra contenuto e presentazione) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Descrizione breve utile anche per SEO e condivisioni -->
+  <meta name="description" content="Pagina dimostrativa per il download dei report di sostenibilità di una impresa del settore primario.">
+</head>
+<body>
+  <!--
+    HEADER / HERO:
+    Introduce subito l'identità dell'azienda e l'obiettivo della pagina.
+    Il pulsante (anchor) porta direttamente alla sezione report (#report).
+  -->
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">
+        <img src="assets\cropped-Logo_Maccarese_web.png" alt="Sostenibilità e trasparenza" class="hero__title-image">
+      </h1>
+      <br>
+      <p class="subtitle">Trasparenza e responsabilità: report e iniziative di sostenibilità</p>
+
+      <!-- CTA: navigazione interna per ridurre click e rendere immediato l'accesso ai documenti -->
+      <a class="btn" href="#report">Vai ai report</a>
+    </div>
+  </header>
+
+  <!-- I contenuti sono organizzati in contenitori fluidi (senza larghezze fisse), 
+  in modo da adattarsi automaticamente a diverse risoluzioni di schermo, inclusi smartphone e tablet. 
+  MAIN: contenuto principale della pagina -->
+  <main class="container">
+    
+    <!-- Sezione introduttiva: spiega in modo trasparente il contesto e come aggiornare i contenuti.-->
+    <section class="intro">
+      <h2>Chi siamo</h2>
+      <p>
+        L’azienda agricola Maccarese S.p.A estendendosi su una superfice di 3200 ettari, in un unico corpo, è considerata tra le più grandi aziende agricole d’Italia, 
+        nonché una delle più grandi realtà imprenditoriali italiane. <br>
+        Attualmente la superfice agricola consta di 3200 ettari pianeggianti  di cui 2400 di superfice utile dove vengono coltivati cereali, proteaginose, foraggi e ortaggi. <br>
+        Recentemente è stato piantumato un mandorleto superintensivo della superfice di 120 ettari che colloca l’azienda leader in Italia per questo tipo di coltura. <br>
+        Quasi tutta la superfice è irrigua utilizzando i più disparati sistemi di irrigazione presenti sul mercato. <br>
+        Oltre all’attività agricola è presente uno dei maggiori allevamenti di vacche da latte a livello nazionale con 3.600 capi presenti che producono 
+        57.000 litri di latte di Alta Qualità al giorno, soddisfacendo il 15 % del consumo giornaliero dei romani. <br>
+        Infine a completare il ciclo di un agricoltura sostenibile che va nella direzione dell’economia circolare, nel 2010 sono stati realizzati 
+        2 impianti di biogas per la produzione di energia elettrica che utilizzano come alimentazione effluenti zootecnici e insilati prodotti in azienda, e nel 2021 
+        è stato installato sul tetto di una stalla un impianto fotovoltaico della potenza di 300 KW, che consente l’autosufficienza energetica diurna di tutto il centro aziendale.
+      </p>
+
+    <!-- Nota operativa-->
+      <p class="note">
+        Nota: i materiali pubblicati sono dimostrativi. 
+      </p>
+    </section>
+
+    <!--
+      Sezione "highlights":
+      riassume alcune aree ESG in forma di "card" per una lettura rapida (scansione visiva).
+      Struttura scelta: lista (<ul>) perché considerati elementi omogenei e ripetuti.
+    -->
+    <section class="highlights">
+      <h2>Iniziative di sostenibilità (estratto)</h2>
+      <ul class="cards">
+        <li class="card">
+          <h3>Economia circolare</h3>
+          <p>Recupero sottoprodotti agricoli e efficientamento nell’uso delle risorse lungo la filiera.</p>
+        </li>
+        <li class="card">
+          <h3>Energia e clima</h3>
+          <p>Produzione da rinnovabili e piani di riduzione delle emissioni climalteranti.</p>
+        </li>
+        <li class="card">
+          <h3>Biodiversità</h3>
+          <p>Pratiche agronomiche a basso impatto e tutela delle aree ecologicamente sensibili.</p>
+        </li>
+        <li class="card">
+          <h3>Benessere animale</h3>
+          <p>Standard gestionali e tracciabilità per il miglioramento continuo degli allevamenti.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!--
+       La sezione dei report è progettata per essere facilmente
+       consultabile anche da mobile: i link sono disposti in modo
+       verticale e leggibile, evitando layout complessi che
+       potrebbero compromettere l’esperienza utente su schermi piccoli.
+      id="report" serve per l'ancoraggio della CTA in alto ("Vai ai report").
+    -->
+    <section id="report" class="reports">
+      <h2>Report e documenti</h2>
+
+      <!--
+        Ogni report è un "article" (contenuto autonomo).
+        Separiamo meta (titolo/descrizione) e azioni (pulsante download/visualizza).
+      -->
+      <article class="report">
+        <div class="report__meta">
+          <h3>Relazione di Impatto 2024</h3>
+          <p class="desc">Documento annuale che riepiloga risultati e obiettivi ESG della Società Agricola Benefit.</p>
+        </div>
+        <div class="report__actions">
+          <!--
+            Attributo download: suggerisce al browser di scaricare il file.
+          -->
+          <a class="btn btn--download" href="assets/relazione-impatto-2024-placeholder.pdf" download>
+            Scarica il PDF
+          </a>
+        </div>
+      </article>
+
+      <article class="report">
+        <div class="report__meta">
+          <h3>Dicono di noi</h3>
+          <p class="desc">Paesi e paesaggi - Canale 5 - 14 Marzo 2025.</p>
+        </div>
+        <div class="report__actions">
+          <!--
+            Link segnaposto:
+            qui si possono collegare altre risorse (pagina istituzionale, archivio documenti, policy).
+          -->
+          <a class="btn btn--secondary" href="https://www.maccaresespa.it/striscia_2025/Canale5_StrisciaLaNotizia_Maccarese_14mar25.mp4" onclick="#">
+             Vedi il Video
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer: disclaimer esplicito sull'uso didattico  -->
+  <footer class="footer">
+    <p> © LUCA PLATANIA 2026 <br> UNIPEGASO - Matricola: 0312301860 - L31 - Tema N.3 - Project Work 17 <br> Solo per Uso didattico. </p>
+  </footer>
+</body>
+</html>
