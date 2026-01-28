@@ -1,16 +1,22 @@
 <!DOCTYPE html>
+<!--
+  La struttura del documento è basata su HTML5 semantico. L’utilizzo di elementi come header, main, section e footer
+  consente di descrivere il significato dei contenuti indipendentemente dalla loro resa grafica.
+
+  Questa scelta migliora:
+  - l’accessibilità (screen reader e tecnologie assistive),
+  - l’indicizzazione dei contenuti,
+  - la fruizione su dispositivi mobili,
+  poiché i browser possono adattare correttamente il layout a schermi di dimensioni diverse senza interventi aggiuntivi.
+ -->
 <html lang="it">
 <!--
-  La struttura HTML è volutamente semplice e semantica. L’utilizzo di tag come header, main, section e footer consente una corretta interpretazione del contenuto
-  anche su dispositivi mobili, favorendo accessibilità, leggibilità e adattamento automatico a schermi di dimensioni ridotte.
--->
-
-<head>
-  <!--
-    Meta essenziali:
-    - charset: corretta codifica dei caratteri (accenti, simboli)
-    - viewport: rende la pagina responsive su dispositivi mobili
+     Il meta viewport è fondamentale per il responsive design: consente al browser mobile di utilizzare la larghezza reale
+     del dispositivo e di scalare correttamente i contenuti, evitando riduzioni automatiche che comprometterebbero
+     la leggibilità del testo.
   -->
+  
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,10 +30,13 @@
   <meta name="description" content="Pagina dimostrativa per il download dei report di sostenibilità di una impresa del settore primario.">
 </head>
 <body>
+  
   <!--
-    HEADER / HERO:
-    Introduce subito l'identità dell'azienda e l'obiettivo della pagina.
-    Il pulsante (anchor) porta direttamente alla sezione report (#report).
+    Header (hero section):
+    introduce immediatamente l’identità dell’azienda e la finalità informativa della pagina.
+
+    La presenza di una call-to-action con ancoraggio interno (#report)  riduce il numero di interazioni necessarie per raggiungere
+    i documenti, migliorando l’esperienza utente soprattutto su dispositivi mobili.
   -->
   <header class="hero">
     <div class="hero__inner">
@@ -42,9 +51,13 @@
     </div>
   </header>
 
-  <!-- I contenuti sono organizzati in contenitori fluidi (senza larghezze fisse), 
-  in modo da adattarsi automaticamente a diverse risoluzioni di schermo, inclusi smartphone e tablet. 
-  MAIN: contenuto principale della pagina -->
+  <!-- 
+    Il contenuto principale è racchiuso in un contenitore fluido, privo di larghezze fisse.
+
+    Questa soluzione consente alla pagina di adattarsi automaticamente a diverse risoluzioni di schermo,
+    mantenendo una lunghezza di riga leggibile sia su desktop sia su smartphone.
+  -->
+  
   <main class="container">
     
     <!-- Sezione introduttiva: spiega in modo trasparente il contesto e come aggiornare i contenuti.-->
@@ -97,11 +110,11 @@
     </section>
 
     <!--
-       La sezione dei report è progettata per essere facilmente
-       consultabile anche da mobile: i link sono disposti in modo
-       verticale e leggibile, evitando layout complessi che
-       potrebbero compromettere l’esperienza utente su schermi piccoli.
-      id="report" serve per l'ancoraggio della CTA in alto ("Vai ai report").
+        La sezione dei report è progettata come area funzionale autonoma.
+
+        I documenti sono presentati come contenuti strutturati (elementi article) per sottolinearne l’indipendenza semantica.
+        La disposizione verticale dei link su mobile riduce il carico cognitivo e migliora l’interazione touch,
+        evitando layout complessi poco adatti a schermi ridotti.
     -->
     <section id="report" class="reports">
       <h2>Report e documenti</h2>
